@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: nft-marketplace-api
+    runtime: node
+    plan: free
+    rootDir: api
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24.21.0
+      - key: NODE_ENV
+        value: production
+      - key: APP_VERSION
+        value: 0.0.0
+      - key: SESSION_TTL_MINUTES
+        value: 60
+      - key: IDEMPOTENCY_TTL_MINUTES
+        value: 1440
+      - key: CORS_ORIGINS
+        sync: false

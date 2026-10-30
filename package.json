@@ -1,0 +1,21 @@
+{
+  "name": "nft-marketplace-challenge",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Marketplace de NFTs — desafio frontend com frontend (Vercel) e API (Render).",
+  "scripts": {
+    "dev": "concurrently -n frontend,api -c cyan,magenta \"npm --prefix frontend run dev\" \"npm --prefix api run dev\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:api": "npm --prefix api run dev",
+    "install:all": "npm install && npm --prefix frontend install && npm --prefix api install",
+    "build": "npm --prefix frontend run build && npm --prefix api run build",
+    "typecheck": "npm --prefix frontend run typecheck && npm --prefix api run typecheck",
+    "lint": "npm --prefix frontend run lint",
+    "format": "npm --prefix frontend run format",
+    "test:e2e": "npm --prefix frontend run test:e2e",
+    "test:e2e:ui": "npm --prefix frontend run test:e2e:ui"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
